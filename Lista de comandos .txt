@@ -1,0 +1,19 @@
+npm init -y - Cria o projeto
+
+npm i/install - Instala uma dependência
+
+ctrl + l - Limpa o terminal
+
+ctrl + shift + i (no VSCode) - Identa o código
+
+ctrl + c - Para o servidor
+
+./ = Sai do arquivo
+
+../ = Sai da pasta (Sobe um nível de pasta)
+
+"nome da pasta" = Entra na pasta 
+
+ex. DB/conn.js = Entrei/selecionou a pasta DB e no arquivo conn.js
+
+

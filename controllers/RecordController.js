@@ -41,11 +41,13 @@ class RecordController {
         }
 
         await Record.create(record)
+
+        res.status(302).json(availableCar)
       } catch (error) {
-        console.log('Opa, tivemos um erro', + error)
+        console.log('Opa, tivemos um erro', +error)
       }
     }
   }
 }
 
-export default
+export default RecordController

@@ -1,0 +1,62 @@
+{
+    "model": "Palio",
+    "color": "Preto",
+    "licensePlate": "EJI5H07",
+    "rentalPrice": 850,
+    "category": "Hatch"
+}
+
+
+
+
+{
+    "model": "Fusca",
+    "color": "Azul",
+    "licensePlate": "ASF4533",
+    "rentalPrice": 160,
+    "category": "Sedan"
+}
+
+
+
+
+{
+    "model": "Omega",
+    "color": "Vermelho",
+    "licensePlate": "SFF2356",
+    "rentalPrice": 750,
+    "category": "Sedan"
+}
+
+
+
+
+{
+    "model": "Corolla",
+    "color": "Prata",
+    "licensePlate": "RWR4879",
+    "rentalPrice": 130,
+    "category": "Sedan"
+}
+
+
+
+
+{
+    "model": "Prisma",
+    "color": "Branco",
+    "licensePlate": "DGF7435",
+    "rentalPrice": 890,
+    "category": "Sedan"
+}
+
+
+
+
+{
+    "model": "HB20",
+    "color": "Cinza",
+    "licensePlate": "UIH7836",
+    "rentalPrice": 960,
+    "category": "Hatch"
+}

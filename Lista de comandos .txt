@@ -2,6 +2,8 @@ npm init -y - Cria o projeto
 
 npm i/install - Instala uma dependência
 
+npm start - inicia a aplicação do projeto
+
 ctrl + l - Limpa o terminal
 
 ctrl + shift + i (no VSCode) - Identa o código

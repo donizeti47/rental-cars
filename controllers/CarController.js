@@ -17,6 +17,14 @@ class CarController {
       console.log('Não foi possível completar a ação.', + error)
     }
   }
+  static async listAllCars(req, res) {
+    const allCars = await Car.findAll()
+
+    // const carObj = allCars.map(item => item.get())
+    const carObj = JSON.parse(JSON.stringify(allCars))
+
+    res.status(302).json(carObj)
+  }
 }
 
 export default CarController;

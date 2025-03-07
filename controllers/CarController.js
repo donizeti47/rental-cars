@@ -14,17 +14,32 @@ class CarController {
       await Car.create(car)
       res.status(200).json('Carro adicionado.');
     } catch (error) {
-      console.log('Não foi possível completar a ação.', + error)
+      console.log('Não foi possível completar a ação.', + error);
     }
   }
-  static async listAllCars(req, res) {
-    const allCars = await Car.findAll()
 
-    // const carObj = allCars.map(item => item.get())
-    const carObj = JSON.parse(JSON.stringify(allCars))
+static async listAllCars(req, res) {
+  const allCars = await Car.findAll()
 
-    res.status(302).json(carObj)
-  }
+  // const carObj = allCars.map(item => item.get())
+  const carObj = JSON.parse(JSON.stringify(allCars))
+
+  res.status(302).json(carObj)
+}
+
+static async getCar(req, res) {
+  const carPlate = req.params.plate
+
+  const car = await Car.findOne({
+    where: {
+      licensePlate: carPlate,
+    },
+  })
+
+  res.status(200).json(car)
+}
+
+
 }
 
 export default CarController;

@@ -23,4 +23,5 @@ conn
 app.post('/carros', CarController.createCar);
 app.post('/carros/alugar', RecordController.rentCar);
 app.get('/carros', CarController.listAllCars);
-app.get('/carros', CarController.listAllCars);
+app.get('/carros/:plate', CarController.getCar);
+

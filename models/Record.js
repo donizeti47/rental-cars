@@ -1,6 +1,6 @@
-import { DataTypes } from 'sequelize'
+import { DataTypes } from 'sequelize';
 
-import db from '../db/conn.js'
+import db from '../db/conn.js';
 
 const Record = db.define('Record', {
   plate: {
@@ -20,4 +20,4 @@ const Record = db.define('Record', {
   },
 })
 
-export default Record
+export default Record;

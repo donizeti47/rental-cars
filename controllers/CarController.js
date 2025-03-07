@@ -11,24 +11,24 @@ class CarController {
     }
 
     try {
-      await Car.create(car)
+      await Car.create(car);
       res.status(200).json('Carro adicionado.');
     } catch (error) {
-      console.log('Não foi possível completar a ação.', + error)
+      console.log('Não foi possível completar a ação.', + error);
     }
   }
 
   static async listAllCars(req, res) {
-    const allCars = await Car.findAll()
+    const allCars = await Car.findAll();
 
-    // const carObj = allCars.map(item => item.get())
-    const carObj = JSON.parse(JSON.stringify(allCars))
+    // const carObj = allCars.map(item => item.get());
+    const carObj = JSON.parse(JSON.stringify(allCars));
 
-    res.status(302).json(carObj)
+    res.status(302).json(carObj);
   }
 
   static async getCar(req, res) {
-    const carPlate = req.params.plate
+    const carPlate = req.params.plate;
 
     const car = await Car.findOne({
       where: {
@@ -36,24 +36,35 @@ class CarController {
       },
     })
 
-    res.status(200).json(car)
+    res.status(200).json(car);
   }
 
   static async updateCar(req, res) {
 
-    const carPlate = req.params.plate
+    const carPlate = req.params.plate;
 
     await Car.update(req.body, {
       where: {
-        licensePlate: carPlate
+        licensePlate: carPlate;
       }
     })
 
-    res.status(200).json('Carro atualizado')
+    res.status(200).json('Carro atualizado');
 
   }
 
+  static async deleteCar(req, res) {
 
+    const carPlate = req.params.plate;
+
+    await Car.destroy({
+      where: {
+        licensePlate: carPlate;
+      }
+    })
+
+    res.status(204).json('Carro deletado com sucesso da tabela de carros da empresa');
+  }
 }
 
 export default CarController;

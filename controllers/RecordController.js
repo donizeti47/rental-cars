@@ -2,6 +2,15 @@ import Car from '../models/Car.js'
 import Record from '../models/Record.js'
 
 class RecordController {
+  static async showRentedCars(req, res){
+
+    const rentedCars = await Record.findAll()
+    const rentedCarsObj = JSON.parse(JSON.stringify(rentedCars))
+
+    res.status(302).json(rentedCarsObj);
+
+  }
+
   static async rentCar(req, res) {
     const record = {
       plate: req.body.plate,
@@ -48,6 +57,20 @@ class RecordController {
       }
     }
   }
+
+  static async showAvailableCars(req, res) {
+    const carTable = await Car.findAll()
+    const carTableObj = JSON.parse(JSON.stringify(carTable))
+
+    const recordTable = await Record.findAll()
+    const recordObjPlates = recordTable.map((item) => item.plate)
+
+    const filteredResults = carTableObj.filter((el) => {
+      return !recordObjPlates.includes(el.licensePlate)
+    })
+
+    res.json(filteredResults);
+  }
 }
 
-export default RecordController
+export default RecordController;

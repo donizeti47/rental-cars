@@ -17,13 +17,13 @@ const Car = db.define('Car', {
     type: DataTypes.STRING,
     allowNull: false,
     require: true
-  },  
+  },
   rentalPrice: {
     type: DataTypes.INTEGER,
     allowNull: false,
     require: true
   },
-    category: {
+  category: {
     type: DataTypes.STRING,
     allowNull: false,
     require: true
